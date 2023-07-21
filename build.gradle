@@ -1,0 +1,20 @@
+plugins {
+    id "java"
+    id "application"
+}
+
+mainClassName = "org.example.Main"
+
+group = "org.example"
+version = "1.0.0"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Usage:
+    def minioVersion = project.findProperty("minioVersion") ?: "8.5.4"
+
+    implementation "io.minio:minio:${minioVersion}"
+}
